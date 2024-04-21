@@ -201,7 +201,7 @@ st.markdown("<h1 style='text-align: center;'>BSAN 885 MSBA Capstone Project</h1>
 st.markdown("<h2 style='text-align: center;'>Team Hanu-men - Forecasting Product Returns</h2>", unsafe_allow_html=True)
 
 # Path to your logo (can be a local path or a URL)
-logo_path = "./logo.png" 
+logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/e743f9f4b03a0b43793a67b6fe1758de24fc57de/logo.png" 
 
 
 # Display the logo centered using HTML within Markdown
