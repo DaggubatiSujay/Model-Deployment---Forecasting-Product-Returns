@@ -299,7 +299,7 @@ with col1:
     team_images = [
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true", "Karthik Sai Twarakavi", "Team Lead"],
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true", "Sujay Daggubati", "Data Scientist"],
-        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true", "Radha Krishna Ramisetty", "Data Analyst"],
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.jpg?raw=true", "Radha Krishna Murthy Ramisetty", "Data Analyst"],
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true", "Sesan Adeniji", "Research Analyst"]
     ]
 
