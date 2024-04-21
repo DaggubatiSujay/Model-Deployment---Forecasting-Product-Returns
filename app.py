@@ -306,7 +306,7 @@ with col1:
     for imgs in team_images:
         st.markdown(f"""
             <div style="text-align: center; margin-bottom: 20px;">  <!-- Add margin to the bottom for spacing -->
-                <img src="{imgs[0]}" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;" /> <!-- Adjust image size and roundness -->
+                <img src="{imgs[0]}" style="width: 300px; height: 300px; margin-bottom: 10px;" /> <!-- Adjust image size and roundness -->
                 <div>{imgs[1]}</div>  <!-- Name of the person -->
                 <div>{imgs[2]}</div>  <!-- Title of the person -->
             </div>
