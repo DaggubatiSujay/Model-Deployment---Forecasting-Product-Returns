@@ -191,6 +191,9 @@ st.set_page_config(
     layout="wide"
 )
 
+st.header("BSAN 885 MSBA Capstone Project")
+st.header("Team Hanu-men")
+st.image("logo.png", caption = "Hanu-Men Logo", width = 300)
 
 @st.cache_resource
 def load_model():
