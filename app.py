@@ -304,9 +304,9 @@ with col1:
     for imgs in team_images:
         st.markdown(f"""
             <div style="display: flex; align-items: center;">
-                <img src="{imgs[0]}" style="width: 300px; height: 300; border-radius: 50%; margin-right: 10px;" />
-                <p style = "text-align:center;">imgs[1]</p>
-                <p style = "text-align:center;">imgs[2]</p>
+                <img src="{imgs[0]}" style="width: 300px; height: 300; margin-right: 10px;" />
+                <p style = "text-align:center;">{imgs[1]}</p>
+                <p style = "text-align:center;">{imgs[2]}</p>
             </div>
             """, unsafe_allow_html = True)
 
