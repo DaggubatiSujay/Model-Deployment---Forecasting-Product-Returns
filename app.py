@@ -195,15 +195,11 @@ st.set_page_config(
 # Custom CSS to change the background color
 st.markdown("""
 <style>
-    body {
-        color: #000000;
-        background-color: #fffccc;
+    html, body, .reportview-container .main .block-container, .reportview-container .main, .reportview-container {
+        background-color: #fffccc !important; /* Ensure it applies over any existing styles */
     }
-    .reportview-container {
-        background: #fffccc;
-    }
-    .sidebar .sidebar-content {
-        background: #fffccc;
+    .reportview-container .sidebar .sidebar-content {
+        background-color: #fffccc !important; /* For the sidebar */
     }
 </style>
 """, unsafe_allow_html=True)
