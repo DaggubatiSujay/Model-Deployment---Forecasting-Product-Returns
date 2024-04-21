@@ -204,8 +204,8 @@ logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Pr
 
 # Display the logo beside the header using HTML within Markdown
 st.markdown(f"""
-<div style="align-items: center;">
-    <img src="{logo_path}" style="width: 50px; height: 50px; border-radius: 50%;" />
+<div style="display: flex; align-items: center;">
+    <img src="{logo_path}" style="width: 50px; height: 50px; border-radius: 50%; align: center" />
     <h1 style="text-align: center;">Team Hanu-men</h1>
 </div>
 """, unsafe_allow_html=True)
