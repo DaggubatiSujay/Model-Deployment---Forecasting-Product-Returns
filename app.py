@@ -299,7 +299,8 @@ with col1:
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true", "Karthik Sai Twarakavi", "Team Lead"],
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true", "Sujay Daggubati", "Data Scientist"],
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true", "Radha Krishna Ramisetty", "Data Analyst"],
-        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true]"]
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true", "Sesan Adeniji", "Research Analyst"]
+    ]
     for imgs in team_images:
         <div style="display: flex; align-items: center;">
             <img src="{imgs[0]}" style="width: 300px; height: 300; border-radius: 50%; margin-right: 10px;" />
