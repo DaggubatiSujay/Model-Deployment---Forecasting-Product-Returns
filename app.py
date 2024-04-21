@@ -204,11 +204,13 @@ st.markdown("<h2 style='text-align: center;'>Team Hanu-men - Forecasting Product
 logo_path = "logo.png" 
 
 
-# Display the logo centered using HTML within Markdown
+# Display the logo using Streamlit's function, centered using CSS in Markdown
 st.markdown(
-    f"<div style='text-align: center;'><img src='logo.png' width='100'></div>", 
+    "<div style='text-align: center;'>",
     unsafe_allow_html=True
 )
+st.image("logo.png", width=100)
+st.markdown("</div>", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_model():
