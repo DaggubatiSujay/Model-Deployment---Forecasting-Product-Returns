@@ -212,6 +212,11 @@ def display_risk_message(risk, probability):
     bg_color = bg_colors[risk]
     text_color = text_colors[risk]
 
+    st.set_page_config(
+    page_title="Forecasting Product Returns",
+    # page_icon="logo.png",  # URL to the logo image
+    layout="wide"
+    )
     # Using markdown and inline CSS to style the output
     st.markdown(f"""
     <style>
