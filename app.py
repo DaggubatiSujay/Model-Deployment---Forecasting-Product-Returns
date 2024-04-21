@@ -308,7 +308,7 @@ def display_risk_message(risk, probability):
 
 
 # Layout configuration
-col1, col2 = st.columns([2, 3])  # Adjust the size ratio as needed
+col1, col2 = st.columns([3, 3])  # Adjust the size ratio as needed
 
 # Column for team member images
 with col2:
