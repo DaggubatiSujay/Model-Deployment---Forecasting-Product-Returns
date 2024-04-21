@@ -237,7 +237,11 @@ def display_risk_message(risk, probability):
     
 
 
-
+st.set_page_config(
+    page_title="Forecasting Product Returns",
+    page_icon="logo.png",  # URL to the logo image
+    layout="wide"
+)
 
 
 # Streamlit form for user input
