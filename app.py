@@ -311,8 +311,38 @@ def display_risk_message(risk, probability):
 col1, col2 = st.columns([2, 3])  # Adjust the size ratio as needed
 
 # Column for team member images
+# with col1:
+#     # Display the logo beside the header using HTML within Markdown
+#     st.markdown(f"""
+#     <div style="display: flex; justify-content: center; width: 100%;">
+#         <div style="display: flex; align-items: center;">
+#             <img src="{logo_path}" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 10px;" />
+#             <h1>Team Hanu-Men</h1>
+#         </div>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+#     # Assume images are hosted and accessible via URLs
+#     team_images = [
+#         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true", "Karthik Sai Twarakavi", "Team Lead"],
+#         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true", "Sujay Daggubati", "Data Scientist"],
+#         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.jpg?raw=true", "Radha Krishna Murthy Ramisetty", "Data Analyst"],
+#         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true", "Sesan Adeniji", "Research Analyst"]
+#     ]
+
+#     for imgs in team_images:
+#         st.markdown(f"""
+#             <div style="text-align: center; margin-bottom: 20px;">  <!-- Add margin to the bottom for spacing -->
+#                 <img src="{imgs[0]}" style="width: 150px; height: 150px; margin-bottom: 10px;" /> <!-- Adjust image size and roundness -->
+#                 <div>{imgs[1]}</div>  <!-- Name of the person -->
+#                 <div>{imgs[2]}</div>  <!-- Title of the person -->
+#             </div>
+#             """, unsafe_allow_html=True)
+
+
+
+# Column for team member images
 with col1:
-    # Display the logo beside the header using HTML within Markdown
     st.markdown(f"""
     <div style="display: flex; justify-content: center; width: 100%;">
         <div style="display: flex; align-items: center;">
@@ -330,15 +360,16 @@ with col1:
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true", "Sesan Adeniji", "Research Analyst"]
     ]
 
-    for imgs in team_images:
-        st.markdown(f"""
-            <div style="text-align: center; margin-bottom: 20px;">  <!-- Add margin to the bottom for spacing -->
-                <img src="{imgs[0]}" style="width: 150px; height: 150px; margin-bottom: 10px;" /> <!-- Adjust image size and roundness -->
-                <div>{imgs[1]}</div>  <!-- Name of the person -->
-                <div>{imgs[2]}</div>  <!-- Title of the person -->
-            </div>
-            """, unsafe_allow_html=True)
-
+    # Creating two rows of two columns each to display team member images and details
+    for i in range(0, len(team_images), 2):
+        cols = st.columns(2)
+        for j in range(2):
+            if i + j < len(team_images):
+                with cols[j]:
+                    img_url, name, title = team_images[i + j]
+                    st.image(img_url, width=150)
+                    st.write(name)
+                    st.write(title)
 
 # Streamlit form for user input
 with col2:
