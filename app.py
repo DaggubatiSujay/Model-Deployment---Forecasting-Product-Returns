@@ -185,7 +185,11 @@ def get_model_results(df):
     return df
 
 
-
+st.set_page_config(
+    page_title="Forecasting Product Returns",
+    page_icon="logo.png",  # URL to the logo image
+    layout="wide"
+)
 
 
 @st.cache_resource
@@ -213,11 +217,11 @@ def display_risk_message(risk, probability):
     # Pick colors based on risk level
     bg_color = bg_colors[risk]
     text_color = text_colors[risk]
-    st.set_page_config(
-        page_title="Forecasting Product Returns",
-        page_icon="logo.png",  # URL to the logo image
-        layout="wide"
-    )
+    # st.set_page_config(
+    #     page_title="Forecasting Product Returns",
+    #     page_icon="logo.png",  # URL to the logo image
+    #     layout="wide"
+    # )
     
     
     # Using markdown and inline CSS to style the output
@@ -237,11 +241,11 @@ def display_risk_message(risk, probability):
     
 
 
-st.set_page_config(
-    page_title="Forecasting Product Returns",
-    page_icon="logo.png",  # URL to the logo image
-    layout="wide"
-)
+# st.set_page_config(
+#     page_title="Forecasting Product Returns",
+#     page_icon="logo.png",  # URL to the logo image
+#     layout="wide"
+# )
 
 
 # Streamlit form for user input
