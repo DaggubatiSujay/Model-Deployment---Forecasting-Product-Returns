@@ -212,7 +212,7 @@ logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Pr
 st.markdown("""
 <style>
     .reportview-container .markdown-text-container {
-        padding-top: 2rem;  /* Reduce top padding, adjust the value as needed */
+        padding-top: 1rem;  /* Reduce top padding, adjust the value as needed */
     }
     .reportview-container .main .block-container {
         padding-top: 0;  /* Set to '0' to remove padding at the top of the block container */
