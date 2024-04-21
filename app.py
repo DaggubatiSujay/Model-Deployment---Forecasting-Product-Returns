@@ -195,11 +195,11 @@ def load_model():
 model = load_model()
 
 
-st.set_page_config(
-    page_title="Forecasting Product Returns",
-    # page_icon="logo.png",  # URL to the logo image
-    layout="wide"
-)
+# st.set_page_config(
+#     page_title="Forecasting Product Returns",
+#     # page_icon="logo.png",  # URL to the logo image
+#     layout="wide"
+# )
 
 def display_risk_message(risk, probability):
     if risk == "Low":
