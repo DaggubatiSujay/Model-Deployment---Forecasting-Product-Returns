@@ -296,13 +296,17 @@ with col1:
     """, unsafe_allow_html=True)
     # Assume images are hosted and accessible via URLs
     team_images = [
-        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true",
-        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true",
-        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true",
-        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true"
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true", "Karthik Sai Twarakavi", "Team Lead"],
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true", "Sujay Daggubati", "Data Scientist"],
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true", "Radha Krishna Ramisetty", "Data Analyst"],
+        ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true]"
     ]
-    for img_url in team_images:
-        st.image(img_url, width=150)  # Adjust width as necessary
+    for imgs in team_images:
+        <div style="display: flex; align-items: center;">
+            <img src="{imgs[0]}" style="width: 300px; height: 300; border-radius: 50%; margin-right: 10px;" />
+            <p style = "text-align:center;">imgs[1]</p>
+            <p style = "text-align:center;">imgs[2]</p>
+        </div>
 
 
 # Streamlit form for user input
