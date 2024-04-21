@@ -191,9 +191,24 @@ st.set_page_config(
     layout="wide"
 )
 
-st.header("BSAN 885 MSBA Capstone Project")
-st.header("Team Hanu-men")
-st.image("logo.png", caption = "Hanu-Men Logo", width = 300)
+# st.header("BSAN 885 MSBA Capstone Project")
+# st.header("Team Hanu-men")
+# st.image("logo.png", caption = "Hanu-Men Logo", width = 300)
+
+
+# Using Markdown to add centered titles
+st.markdown("<h1 style='text-align: center;'>BSAN 885 MSBA Capstone Project</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>Team Hanu-men - Forecasting Product Returns</h2>", unsafe_allow_html=True)
+
+# Path to your logo (can be a local path or a URL)
+logo_path = "logo.png" 
+
+
+# Display the logo centered using HTML within Markdown
+st.markdown(
+    f"<div style='text-align: center;'><img src='{logo_path}' width='100'></div>", 
+    unsafe_allow_html=True
+)
 
 @st.cache_resource
 def load_model():
