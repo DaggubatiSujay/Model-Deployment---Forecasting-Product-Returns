@@ -206,7 +206,7 @@ logo_path = "logo.png"
 
 # Display the logo centered using HTML within Markdown
 st.markdown(
-    f"<div style='text-align: center;'><img src='{logo_path}' width='100'></div>", 
+    f"<div style='text-align: center;'><img src='logo.png' width='100'></div>", 
     unsafe_allow_html=True
 )
 
