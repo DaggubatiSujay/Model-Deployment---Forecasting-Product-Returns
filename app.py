@@ -204,19 +204,21 @@ logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Pr
 
 # Display the logo beside the header using HTML within Markdown
 st.markdown(f"""
-<div style="display: flex; align-items: center;">
-    <img src="{logo_path}" style="width: 50px; height: 50px; border-radius: 50%; align: center" />
-    <h1 style="text-align: center;">Team Hanu-men</h1>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <div style="display: flex; align-items: center;">
+        <img src="{logo_path}" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;" />
+        <h1>Team Hanu-men</h1>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
 
 
 # Display the logo centered using HTML within Markdown
-st.markdown(
-    f"<div style='text-align: center;'><img src='{logo_path}' width='150'></div>", 
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     f"<div style='text-align: center;'><img src='{logo_path}' width='150'></div>", 
+#     unsafe_allow_html=True
+# )
 
 @st.cache_resource
 def load_model():
