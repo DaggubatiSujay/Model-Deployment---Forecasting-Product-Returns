@@ -199,6 +199,8 @@ st.set_page_config(
 # Using Markdown to add centered titles
 st.markdown("<h1 style='text-align: center;'>BSAN 885 MSBA Capstone Project</h1>", unsafe_allow_html=True)
 # st.markdown("<h2 style='text-align: center;'>Team Hanu-men - Forecasting Product Returns</h2>", unsafe_allow_html=True)
+# Path to your logo (can be a local path or a URL)
+logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/logo.png?raw=true" 
 
 # Display the logo beside the header using HTML within Markdown
 st.markdown(f"""
@@ -208,8 +210,6 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Path to your logo (can be a local path or a URL)
-logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/logo.png?raw=true" 
 
 
 # Display the logo centered using HTML within Markdown
