@@ -201,16 +201,14 @@ st.markdown("<h1 style='text-align: center;'>BSAN 885 MSBA Capstone Project</h1>
 st.markdown("<h2 style='text-align: center;'>Team Hanu-men - Forecasting Product Returns</h2>", unsafe_allow_html=True)
 
 # Path to your logo (can be a local path or a URL)
-logo_path = "logo.png" 
+logo_path = "./logo.png" 
 
 
-# Display the logo using Streamlit's function, centered using CSS in Markdown
+# Display the logo centered using HTML within Markdown
 st.markdown(
-    "<div style='text-align: center;'>",
+    f"<div style='text-align: center;'><img src='{logo_path}' width='300'></div>", 
     unsafe_allow_html=True
 )
-st.image("logo.png", width=100)
-st.markdown("</div>", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_model():
