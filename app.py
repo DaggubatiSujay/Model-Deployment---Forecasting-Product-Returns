@@ -206,7 +206,7 @@ logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Pr
 
 # Display the logo centered using HTML within Markdown
 st.markdown(
-    f"<div style='text-align: center;'><img src='{logo_path}' width='300'></div>", 
+    f"<div style='text-align: center;'><img src='{logo_path}' width='150'></div>", 
     unsafe_allow_html=True
 )
 
