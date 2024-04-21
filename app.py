@@ -294,6 +294,7 @@ with col1:
         </div>
     </div>
     """, unsafe_allow_html=True)
+
     # Assume images are hosted and accessible via URLs
     team_images = [
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true", "Karthik Sai Twarakavi", "Team Lead"],
@@ -301,14 +302,15 @@ with col1:
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true", "Radha Krishna Ramisetty", "Data Analyst"],
         ["https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true", "Sesan Adeniji", "Research Analyst"]
     ]
+
     for imgs in team_images:
         st.markdown(f"""
-            <div style="display: flex; align-items: center;">
-                <img src="{imgs[0]}" style="width: 300px; height: 300; margin-right: 10px;" />
-                <p style = "text-align:center;">{imgs[1]}</p>
-                <p style = "text-align:center;">{imgs[2]}</p>
+            <div style="text-align: center; margin-bottom: 20px;">  <!-- Add margin to the bottom for spacing -->
+                <img src="{imgs[0]}" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;" /> <!-- Adjust image size and roundness -->
+                <div>{imgs[1]}</div>  <!-- Name of the person -->
+                <div>{imgs[2]}</div>  <!-- Title of the person -->
             </div>
-            """, unsafe_allow_html = True)
+            """, unsafe_allow_html=True)
 
 
 # Streamlit form for user input
