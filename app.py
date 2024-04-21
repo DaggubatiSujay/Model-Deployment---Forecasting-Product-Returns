@@ -198,17 +198,29 @@ st.set_page_config(
 logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/logo.png?raw=true" 
 
 # Display the logo beside the header using HTML within Markdown
-st.markdown(f"""
-<div style="display: flex; justify-content: center; width: 100%;">
-    <div style="display: flex; align-items: center;">
-        <img src="{logo_path}" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 10px;" />
-        <h1>Team Hanu-Men</h1>
-    </div>
-</div>
+# st.markdown(f"""
+# <div style="display: flex; justify-content: center; width: 100%;">
+#     <div style="display: flex; align-items: center;">
+#         <img src="{logo_path}" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 10px;" />
+#         <h1>Team Hanu-Men</h1>
+#     </div>
+# </div>
+# """, unsafe_allow_html=True)
+
+
+
+st.markdown("""
+<style>
+    .reportview-container .markdown-text-container {
+        padding-top: 2rem;  /* Reduce top padding, adjust the value as needed */
+    }
+    .reportview-container .main .block-container {
+        padding-top: 0;  /* Set to '0' to remove padding at the top of the block container */
+    }
+</style>
 """, unsafe_allow_html=True)
 
-
-
+# Your header with reduced top space
 st.markdown("<h1 style='text-align: center;'>BSAN 885 MSBA Capstone Project</h1>", unsafe_allow_html=True)
 
 
