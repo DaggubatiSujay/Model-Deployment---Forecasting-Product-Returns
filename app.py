@@ -191,6 +191,25 @@ st.set_page_config(
     layout="wide"
 )
 
+
+# Custom CSS to change the background color
+st.markdown("""
+<style>
+    body {
+        color: #000000;
+        background-color: #fffccc;
+    }
+    .reportview-container {
+        background: #fffccc;
+    }
+    .sidebar .sidebar-content {
+        background: #fffccc;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+
 # st.header("BSAN 885 MSBA Capstone Project")
 # st.header("Team Hanu-men")
 # st.image("logo.png", caption = "Hanu-Men Logo", width = 300)
