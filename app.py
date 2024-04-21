@@ -280,39 +280,65 @@ def display_risk_message(risk, probability):
 # )
 
 
+# Layout configuration
+col1, col2 = st.columns([2, 3])  # Adjust the size ratio as needed
+
+# Column for team member images
+with col1:
+    # Display the logo beside the header using HTML within Markdown
+    st.markdown(f"""
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <div style="display: flex; align-items: center;">
+            <img src="{logo_path}" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 10px;" />
+            <h1>Team Hanu-Men</h1>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    # Assume images are hosted and accessible via URLs
+    team_images = [
+        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/karthik.png?raw=true",
+        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sujay.png?raw=true",
+        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/RK.png?raw=true",
+        "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Product-Returns/blob/main/Sesan.png?raw=true"
+    ]
+    for img_url in team_images:
+        st.image(img_url, width=150)  # Adjust width as necessary
+
+
 # Streamlit form for user input
-with st.form(key='user_input_form'):
-    st.header("Product Return Risk Assessment Form")
-    product_line_name = st.text_input("Product Line Name")
-    subgroup = st.text_input("Subgroup")
-    product_code = st.text_input("Product Code")
-    cash_or_charge = st.selectbox("CashOrCharge", ["Csh", "Chg"])
-    quantity = st.number_input("Quantity", min_value=1)
-    total_sales_value = st.number_input("TotalSales Value", min_value=0.01)
-    customer_type = st.text_input("Customer Type")
-    submit_button = st.form_submit_button(label="Submit")
-
-if submit_button:
-    # Create a DataFrame with the entered data
-    df = pd.DataFrame({
-        'ProdLine': [product_line_name],
-        'Subgroup': [subgroup],
-        'Quantity': [quantity],
-        'TotalSales': [total_sales_value],
-        'ProductCode': [product_code],
-        'CashOrCharge': [cash_or_charge],
-        'CustomerType': [customer_type],
-    })
-
-    # Data processing and prediction
-    try:
-        cleaned_df = data_clean(df)
-        features_df = get_features(cleaned_df)
-        final_df = get_model_results(features_df)
-        probability = final_df["CatBoost_Probability"].iloc[0]
-        risk = final_df["Risk Level"].iloc[0]
-
-        # Display the results
-        display_risk_message(risk, probability)
-    except Exception as e:
-        st.error(f"Error processing the form: {str(e)}")
+with col2:
+    with st.form(key='user_input_form'):
+        st.header("Product Return Risk Assessment Form")
+        product_line_name = st.text_input("Product Line Name")
+        subgroup = st.text_input("Subgroup")
+        product_code = st.text_input("Product Code")
+        cash_or_charge = st.selectbox("CashOrCharge", ["Csh", "Chg"])
+        quantity = st.number_input("Quantity", min_value=1)
+        total_sales_value = st.number_input("TotalSales Value", min_value=0.01)
+        customer_type = st.text_input("Customer Type")
+        submit_button = st.form_submit_button(label="Submit")
+    
+    if submit_button:
+        # Create a DataFrame with the entered data
+        df = pd.DataFrame({
+            'ProdLine': [product_line_name],
+            'Subgroup': [subgroup],
+            'Quantity': [quantity],
+            'TotalSales': [total_sales_value],
+            'ProductCode': [product_code],
+            'CashOrCharge': [cash_or_charge],
+            'CustomerType': [customer_type],
+        })
+    
+        # Data processing and prediction
+        try:
+            cleaned_df = data_clean(df)
+            features_df = get_features(cleaned_df)
+            final_df = get_model_results(features_df)
+            probability = final_df["CatBoost_Probability"].iloc[0]
+            risk = final_df["Risk Level"].iloc[0]
+    
+            # Display the results
+            display_risk_message(risk, probability)
+        except Exception as e:
+            st.error(f"Error processing the form: {str(e)}")
