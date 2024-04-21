@@ -234,7 +234,7 @@ def display_risk_message(risk, probability):
 
 # Streamlit form for user input
 with st.form(key='user_input_form'):
-    st.header("Transaction Risk Assessment Form")
+    st.header("Product Return Risk Assessment Form")
     product_line_name = st.text_input("Product Line Name")
     subgroup = st.text_input("Subgroup")
     product_code = st.text_input("Product Code")
