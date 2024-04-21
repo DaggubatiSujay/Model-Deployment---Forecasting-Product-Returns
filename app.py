@@ -311,7 +311,7 @@ def display_risk_message(risk, probability):
 col1, col2 = st.columns([3, 3])  # Adjust the size ratio as needed
 
 # Column for team member images
-with col2:
+with col1:
     # Display the logo beside the header using HTML within Markdown
     st.markdown(f"""
     <div style="display: flex; justify-content: center; width: 100%;">
@@ -372,7 +372,7 @@ with col2:
 #                     st.write(title)
 
 # Streamlit form for user input
-with col1:
+with col2:
     with st.form(key='user_input_form'):
         st.header("Product Return Risk Assessment Form")
         product_line_name = st.text_input("Product Line Name")
