@@ -206,7 +206,7 @@ logo_path = "https://github.com/DaggubatiSujay/Model-Deployment---Forecasting-Pr
 st.markdown(f"""
 <div style="display: flex; align-items: center; gap: 10px;">
     <img src="{logo_path}" style="width: 50px; height: 50px; border-radius: 50%;" />
-    <h1 style="margin: 0;">Team Hanu-men</h1>
+    <h1 style="text-align: center;">Team Hanu-men</h1>
 </div>
 """, unsafe_allow_html=True)
 
