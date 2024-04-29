@@ -405,7 +405,7 @@ with col2:
         # Data processing and prediction
         try:
             cleaned_df = data_clean(df)
-            features_df = get_features(cleaned_df)
+            features_df, subgroups_list, productlines_list = get_features(cleaned_df)
             final_df = get_model_results(features_df)
             probability = final_df["CatBoost_Probability"].iloc[0]
             risk = final_df["Risk Level"].iloc[0]
