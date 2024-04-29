@@ -387,8 +387,11 @@ with col2:
         subgroup = st.selectbox("Subgroup", [''] + subgroups_list, index = 0)
         product_code = st.selectbox("Product Code", [''] + product_codes, index = 0)
         cash_or_charge = st.selectbox("CashOrCharge", [''] + ["Csh", "Chg"], index = 0)
-        quantity = st.number_input("Quantity", min_value=1)
-        total_sales_value = st.number_input("TotalSales Value", min_value=0.01)
+        # quantity = st.number_input("Quantity", min_value=1)
+        # total_sales_value = st.number_input("TotalSales Value", min_value=0.01)
+        quantity = st.number_input("Quantity", min_value=1, value=None)
+        total_sales_value = st.number_input("Total Sales Value", min_value=0.01, value=None)
+    
         customer_type = st.selectbox("Customer Type", [''] + customer_types, index = 0)
         submit_button = st.form_submit_button(label="Submit")
     
