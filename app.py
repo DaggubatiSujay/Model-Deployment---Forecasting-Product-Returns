@@ -383,36 +383,41 @@ with col1:
 with col2:
     with st.form(key='user_input_form'):
         st.header("Product Return Risk Assessment Form")
-        product_line_name = st.selectbox("Product Line Name", productlines_list)
-        subgroup = st.selectbox("Subgroup", subgroups_list)
-        product_code = st.selectbox("Product Code", product_codes)
-        cash_or_charge = st.selectbox("CashOrCharge", ["Csh", "Chg"])
+        product_line_name = st.selectbox("Product Line Name", [''] + productlines_list, index = 0)
+        subgroup = st.selectbox("Subgroup", [''] + subgroups_list, index = 0)
+        product_code = st.selectbox("Product Code", [''] + product_codes, index = 0)
+        cash_or_charge = st.selectbox("CashOrCharge", [''] + ["Csh", "Chg"], index = 0)
         quantity = st.number_input("Quantity", min_value=1)
         total_sales_value = st.number_input("TotalSales Value", min_value=0.01)
-        customer_type = st.selectbox("Customer Type", customer_types)
+        customer_type = st.selectbox("Customer Type", [''] + customer_types, index = 0)
         submit_button = st.form_submit_button(label="Submit")
     
     if submit_button:
-        # Create a DataFrame with the entered data
-        df = pd.DataFrame({
-            'ProdLine': [product_line_name],
-            'Subgroup': [subgroup],
-            'Quantity': [quantity],
-            'TotalSales': [total_sales_value],
-            'ProductCode': [product_code],
-            'CashOrCharge': [cash_or_charge],
-            'CustomerType': [customer_type],
-        })
-    
-        # Data processing and prediction
-        try:
-            cleaned_df = data_clean(df)
-            features_df, subgroups_list, productlines_list = get_features(cleaned_df)
-            final_df = get_model_results(features_df)
-            probability = final_df["CatBoost_Probability"].iloc[0]
-            risk = final_df["Risk Level"].iloc[0]
-    
-            # Display the results
-            display_risk_message(risk, probability)
-        except Exception as e:
-            st.error(f"Error processing the form: {str(e)}")
+        # Check if any dropdown has an empty selection
+        if (product_line_name == '' or subgroup == '' or product_code == '' or 
+            cash_or_charge == '' or customer_type == ''):
+            st.error("Please complete all fields before submitting.")
+        else:
+            # Create a DataFrame with the entered data
+            df = pd.DataFrame({
+                'ProdLine': [product_line_name],
+                'Subgroup': [subgroup],
+                'Quantity': [quantity],
+                'TotalSales': [total_sales_value],
+                'ProductCode': [product_code],
+                'CashOrCharge': [cash_or_charge],
+                'CustomerType': [customer_type],
+            })
+        
+            # Data processing and prediction
+            try:
+                cleaned_df = data_clean(df)
+                features_df, subgroups_list, productlines_list = get_features(cleaned_df)
+                final_df = get_model_results(features_df)
+                probability = final_df["CatBoost_Probability"].iloc[0]
+                risk = final_df["Risk Level"].iloc[0]
+        
+                # Display the results
+                display_risk_message(risk, probability)
+            except Exception as e:
+                st.error(f"Error processing the form: {str(e)}")
