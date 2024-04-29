@@ -4,7 +4,7 @@ import joblib
 import streamlit as st
 import warnings
 warnings.filterwarnings('ignore') 
-from values_list import subgroups_list, productlines_list, product_codes, product_codes, customer_types
+from values_lists import subgroups_list, productlines_list, product_codes, product_codes, customer_types
 
 def data_clean(df):
     
