@@ -397,7 +397,7 @@ with col2:
         product_line_name = st.selectbox("Product Line Name", [''] + productlines_list, index=0)
         subgroup = st.selectbox("Subgroup", [''] + subgroups_list, index=0)
         product_code = st.selectbox("Product Code", [''] + product_codes, index=0)
-        cash_or_charge = st.selectbox("CashOrCharge", [''] + ["Cash", "Charged to Account"], index=0)
+        cash_or_charge = st.selectbox("Payment Type", [''] + ["Cash", "Charged to Account"], index=0)
         if cash_or_charge == "Cash":
             cash_or_charge = "Csh"
         elif cash_or_charge == "Charged to Account":
