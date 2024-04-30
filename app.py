@@ -397,7 +397,11 @@ with col2:
         product_line_name = st.selectbox("Product Line Name", [''] + productlines_list, index=0)
         subgroup = st.selectbox("Subgroup", [''] + subgroups_list, index=0)
         product_code = st.selectbox("Product Code", [''] + product_codes, index=0)
-        cash_or_charge = st.selectbox("CashOrCharge", [''] + ["Csh", "Chg"], index=0)
+        cash_or_charge = st.selectbox("CashOrCharge", [''] + ["Cash", "Charged to Account"], index=0)
+        if cash_or_charge == "Cash":
+            cash_or_charge = "Csh"
+        elif cash_or_charge == "Charged to Account":
+            cash_or_charge = "Chg"
         customer_type = st.selectbox("Customer Type", [''] + customer_types, index=0)
         quantity = st.number_input("Quantity", min_value=1, format='%d')
         total_sales_value = st.number_input("Total Sales Value", min_value=0.01, format='%.2f')
