@@ -403,8 +403,8 @@ with col2:
         elif cash_or_charge == "Charged to Account":
             cash_or_charge = "Chg"
         customer_type = st.selectbox("Customer Type", [''] + customer_types, index=0)
-        quantity = st.number_input("Quantity", min_value=1, format='%d')
-        total_sales_value = st.number_input("Total Sales Value", min_value=0.01, format='%.2f')
+        quantity = st.number_input("Quantity", min_value=1, format='%d', value = None)
+        total_sales_value = st.number_input("Total Sales Value", min_value=0.01, format='%.2f', value = None)
         
         submit_button = st.form_submit_button(label="Submit")
     
