@@ -4,7 +4,18 @@ import joblib
 import streamlit as st
 import warnings
 warnings.filterwarnings('ignore') 
-from values_lists import subgroups_list, productlines_list, product_codes, product_codes, customer_types
+from values_lists import subgroups_list, productlines_list, product_codes, customer_types
+
+def custom_sort(item):
+    # Use a tuple where 'Other' gets a special sort key
+    return (item == "Other", item)
+
+subgroups_list.sort(key=custom_sort)
+productlines_list.sort(key=custom_sort)
+product_codes.sort(key=custom_sort)
+customer_types.sort(key=custom_sort)
+
+
 
 def data_clean(df):
     
